@@ -7,7 +7,7 @@ ARG GIT_BRANCH
 
 LABEL maintainer="HMPPS Digital Studio <info@digital.justice.gov.uk>"
 
-ENV TZ=Europe/Londongit status
+ENV TZ=Europe/Londongit
 
 RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone
 
