@@ -1,5 +1,5 @@
 # Stage: base image
-FROM node:20.11-bullseye-slim as base
+FROM node:20.11-bookworm-slim as base
 
 ARG BUILD_NUMBER
 ARG GIT_REF
@@ -8,6 +8,7 @@ ARG GIT_BRANCH
 LABEL maintainer="HMPPS Digital Studio <info@digital.justice.gov.uk>"
 
 ENV TZ=Europe/London
+
 RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone
 
 RUN addgroup --gid 2000 --system appgroup && \
