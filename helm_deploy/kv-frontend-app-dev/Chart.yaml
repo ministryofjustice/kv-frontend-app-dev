@@ -15,4 +15,4 @@ dependencies:
   #   repository: https://ministryofjustice.github.io/hmpps-helm-charts
   - name: generic-service
     version: "2.9"
-    repository: "file:///Users/kalyana.vadlamani/Work/Personal" 
+    repository: "file:///Users/kalyana.vadlamani/Work/Personal/generic-service" 
