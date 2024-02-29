@@ -13,7 +13,7 @@ dependencies:
   #   repository: https://ministryofjustice.github.io/hmpps-helm-charts
   - name: generic-service
     version: "2.9"
-    repository: file://helm_deploy/
+    repository: file:///Users/kalyana.vadlamani/Work/kv-frontend-app-dev/helm_deploy/kv-frontend-app-dev
 
     # - name: generic-service
   #   version: "2.9"
