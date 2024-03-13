@@ -14,6 +14,36 @@ generic-service:
     v1_2_enabled: true
     v0_47_enabled: false
     annotations:
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        server_tokens off;
+        location /health/queue-admin/retry-all-dlqs {
+          deny all;
+          return 401;
+        }
+        location /health/incentives/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /health/non-associations/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /health/allocations/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /health/attendances/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /health/sentencing/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /health/adjudications/reports/reconciliation {
+          deny all;
+          return 401;
+        }
       nginx.ingress.kubernetes.io/server-snippet: |
         server_tokens off;
         location /queue-admin/retry-all-dlqs {
@@ -44,6 +74,7 @@ generic-service:
           deny all;
           return 401;
         }
+        
     host: app-hostname.local # override per environment
     tlsSecretName: kv-frontend-app-dev-cert
 
