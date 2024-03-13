@@ -14,6 +14,7 @@ generic-service:
     v1_2_enabled: true
     v0_47_enabled: false
     annotations:
+      nginx.ingress.kubernetes.io/use-regex: true
       nginx.ingress.kubernetes.io/configuration-snippet: |
         server_tokens off;
         location /health/queue-admin/retry-all-dlqs {
