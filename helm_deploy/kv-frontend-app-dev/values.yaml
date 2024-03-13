@@ -11,6 +11,39 @@ generic-service:
 
   ingress:
     enabled: true
+    v1_2_enabled: true
+    v0_47_enabled: false
+    annotations:
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        server_tokens off;
+        location /queue-admin/retry-all-dlqs {
+          deny all;
+          return 401;
+        }
+        location /incentives/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /non-associations/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /allocations/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /attendances/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /sentencing/reports/reconciliation {
+          deny all;
+          return 401;
+        }
+        location /adjudications/reports/reconciliation {
+          deny all;
+          return 401;
+        }
     host: app-hostname.local # override per environment
     tlsSecretName: kv-frontend-app-dev-cert
 
